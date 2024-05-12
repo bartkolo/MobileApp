@@ -34,10 +34,7 @@ jobs:
           pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
           dotnet build --configuration Release --output ./output
           popd
-          
-      - name: Authenticate Azure CLI
-        run: az login
-      
+
       - name: Login to Azure
         uses: azure/login@v1
         with:
